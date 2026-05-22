@@ -1,0 +1,35 @@
+{
+  "name": "pomodoro",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@number-flow/vue": "^0.5.0",
+    "@nuxt/fonts": "0.14.0",
+    "@nuxt/icon": "2.2.2",
+    "@nuxt/image": "2.0.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "@vueuse/core": "^14.3.0",
+    "@vueuse/nuxt": "^14.3.0",
+    "motion-v": "^2.2.1",
+    "nuxt": "^4.4.5",
+    "reka-ui": "^2.9.7",
+    "tailwind-merge": "^3.6.0",
+    "tailwind-variants": "^3.2.2",
+    "tailwindcss": "^4.3.0",
+    "torph": "^0.0.9",
+    "vue": "^3.5.34",
+    "vue-router": "^5.0.6"
+  },
+  "packageManager": "pnpm@11.2.2+sha512.36e6621fad506178936455e70247b8808ef4ec25797a9f437a93281a020484e2607f6a469a22e982987c3dbb8866e3071514ab10a4a1749e06edcd1ec118436f",
+  "devDependencies": {
+    "prettier": "^3.8.3"
+  }
+}

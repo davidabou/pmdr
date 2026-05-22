@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+/* @theme {
+  :root, .light {
+    --ui-text-dimmed: var(--color-neutral-400);
+    --ui-text-muted: var(--color-neutral-500);
+    --ui-text-toned: var(--color-neutral-600);
+    --ui-text: var(--color-neutral-700);
+    --ui-text-highlighted: var(--color-neutral-900);
+    --ui-text-inverted: white;
+
+    --ui-bg: var(--color-neutral-50);
+    --ui-bg-muted: var(--color-neutral-100);
+    --ui-bg-elevated: var(--color-neutral-200);
+    --ui-bg-accented: var(--color-neutral-300);
+    --ui-bg-inverted: var(--color-neutral-900);
+
+    --ui-border: var(--color-neutral-200);
+    --ui-border-muted: var(--color-neutral-200);
+    --ui-border-accented: var(--color-neutral-300);
+    --ui-border-inverted: var(--color-neutral-900);
+  }
+} */
+
+:root {
+  --font-sans: 'Geist Mono', monospace;
+
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  color: var(--color-neutral-700);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-to-right {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
