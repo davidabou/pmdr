@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
+    '@nuxtjs/color-mode',
     '@vueuse/nuxt',
     'motion-v/nuxt',
     'reka-ui/nuxt'
@@ -27,5 +28,8 @@ export default defineNuxtConfig({
     defaults: {
       weights: ['100 900']
     }
+  },
+  icon: {
+    mode: 'svg'
   }
 })

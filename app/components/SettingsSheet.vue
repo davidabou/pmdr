@@ -18,7 +18,7 @@ const { isSupported } = useWebNotification()
 </script>
 
 <template>
-  <UiSheet title="Settings">
+  <UiSheet title="Settings" tooltip="Settings">
     <UiButton variant="ghost" :sound="false" class="size-8">
       <Icon name="gravity-ui:sliders" class="shrink-0" />
     </UiButton>
@@ -34,8 +34,8 @@ const { isSupported } = useWebNotification()
               :class="[
                 'rounded-2xl p-4 text-left cursor-pointer transition-[color,background-color,scale] active:scale-97',
                 props.settings.preset === p.value
-                  ? 'bg-neutral-800'
-                  : 'bg-neutral-100 hover:bg-neutral-200'
+                  ? 'bg-neutral-800 dark:bg-neutral-100'
+                  : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800'
               ]"
               @click="
                 () => {
@@ -48,8 +48,8 @@ const { isSupported } = useWebNotification()
                 :class="[
                   'font-semibold text-sm',
                   props.settings.preset === p.value
-                    ? 'text-white'
-                    : 'text-neutral-700'
+                    ? 'text-white dark:text-neutral-800'
+                    : 'text-neutral-700 dark:text-neutral-300'
                 ]"
               >
                 {{ p.label }}
@@ -58,7 +58,7 @@ const { isSupported } = useWebNotification()
                 :class="[
                   'text-xs',
                   props.settings.preset === p.value
-                    ? 'text-neutral-300'
+                    ? 'text-neutral-300 dark:text-neutral-500'
                     : 'text-neutral-500'
                 ]"
               >

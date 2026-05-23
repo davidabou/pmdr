@@ -14,13 +14,17 @@ defineProps<Props>()
         v-for="i in total"
         :key="i"
         class="h-1.5 w-6 rounded-full transition-colors"
-        :class="i <= current ? 'bg-neutral-800' : 'bg-neutral-300'"
+        :class="
+          i <= current
+            ? 'bg-neutral-800 dark:bg-neutral-100'
+            : 'bg-neutral-300 dark:bg-neutral-800'
+        "
       />
       <template #fallback>
         <div
           v-for="i in 4"
           :key="i"
-          class="h-1.5 w-6 rounded-full bg-neutral-300"
+          class="h-1.5 w-6 rounded-full bg-neutral-300 dark:bg-neutral-800"
         />
       </template>
     </ClientOnly>

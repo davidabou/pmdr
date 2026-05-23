@@ -22,12 +22,31 @@
   }
 } */
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono: 'Geist Mono', monospace;
+}
+
 :root {
-  --font-sans: 'Geist Mono', monospace;
+  --ui-bg: white;
+  --ui-primary: var(--color-neutral-800);
+  --ui-foreground: var(--color-neutral-700);
 
   letter-spacing: -0.05em;
+  font-family: var(--font-mono);
   font-weight: 500;
-  color: var(--color-neutral-700);
+}
+
+.dark {
+  --ui-bg: var(--color-neutral-950);
+  --ui-primary: var(--color-neutral-100);
+  --ui-foreground: var(--color-neutral-100);
+}
+
+html {
+  background-color: var(--ui-bg);
+  color: var(--ui-foreground);
 }
 
 @keyframes fade-in {
@@ -67,5 +86,29 @@
 
   to {
     transform: translateX(100%);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.95);
   }
 }

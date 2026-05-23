@@ -20,13 +20,15 @@ const label = computed(() => {
 
 <template>
   <div class="flex items-center gap-4">
-    <UiButton
-      variant="ghost"
-      class="size-10 rounded-2xl"
-      @click="emit('reset')"
-    >
-      <Icon name="gravity-ui:arrow-uturn-ccw-left" class="shrink-0" />
-    </UiButton>
+    <UiTooltip text="Reset timer">
+      <UiButton
+        variant="ghost"
+        class="size-10 rounded-2xl"
+        @click="emit('reset')"
+      >
+        <Icon name="gravity-ui:arrow-uturn-ccw-left" class="shrink-0" />
+      </UiButton>
+    </UiTooltip>
 
     <UiButton
       variant="primary"
@@ -45,8 +47,14 @@ const label = computed(() => {
       <TextMorph :text="label" />
     </UiButton>
 
-    <UiButton variant="ghost" class="size-10 rounded-2xl" @click="emit('skip')">
-      <Icon name="gravity-ui:forward-step" class="shrink-0" />
-    </UiButton>
+    <UiTooltip text="Skip phase">
+      <UiButton
+        variant="ghost"
+        class="size-10 rounded-2xl"
+        @click="emit('skip')"
+      >
+        <Icon name="gravity-ui:forward-step" class="shrink-0" />
+      </UiButton>
+    </UiTooltip>
   </div>
 </template>

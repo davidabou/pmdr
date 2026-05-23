@@ -63,7 +63,7 @@ onUnmounted(() => {
     <Motion
       v-for="i in barCount"
       :key="i"
-      class="w-0.5 rounded-full bg-neutral-700"
+      class="w-0.5 rounded-full bg-neutral-700 dark:bg-neutral-100"
       :animate="{ height: `${heights[i - 1]}%` }"
       :transition="{
         type: 'spring',
