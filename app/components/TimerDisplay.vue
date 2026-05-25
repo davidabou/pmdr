@@ -11,7 +11,7 @@ const format = { minimumIntegerDigits: 2 } satisfies Format
 
 <template>
   <div
-    class="tabular-nums font-semibold text-9xl text-neutral-800 dark:text-white"
+    class="tabular-nums font-semibold text-8xl sm:text-9xl text-neutral-800 dark:text-white"
   >
     <NumberFlow :value="minutes" :format="format" />
     <span>:</span>
