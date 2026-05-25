@@ -23,12 +23,34 @@ const cycleProgress = computed(() =>
 
 const toggleTimer = () => (isRunning.value ? timer.pause() : timer.start())
 
+const siteUrl = 'https://pmdr.abou.dev'
+const ogImage = '/logo.svg'
+const description = 'A simple pomodoro app.'
+
+const pageTitle = computed(() => {
+  if (!isRunning.value) return 'Pmdr'
+  const label = timer.phase.value === 'work' ? 'Time to focus!' : 'Break time'
+  return `${formatTime(timer.timeLeft.value || 0)} - ${label}`
+})
+
+useSeoMeta({
+  title: pageTitle,
+  description,
+  author: 'davidabou',
+  robots: 'index, follow',
+  ogType: 'website',
+  ogUrl: siteUrl,
+  ogSiteName: 'Pmdr',
+  ogTitle: pageTitle,
+  ogDescription: description,
+  ogImage
+})
+
 useHead({
-  title: computed(() => {
-    if (!isRunning.value) return 'pmdr'
-    const label = timer.phase.value === 'work' ? 'Time to focus!' : 'Break time'
-    return `${formatTime(timer.timeLeft.value || 0)} - ${label}`
-  })
+  link: [
+    { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
+    { rel: 'apple-touch-icon', href: '/logo.svg' }
+  ]
 })
 </script>
 
@@ -36,7 +58,7 @@ useHead({
   <TooltipProvider :ignoreNonKeyboardFocus="true">
     <div>
       <header class="flex justify-between p-6">
-        <span class="font-bold text-2xl">pmdr</span>
+        <span class="font-bold text-2xl select-none">pmdr</span>
 
         <div class="flex items-center gap-2">
           <ThemeToggler />
