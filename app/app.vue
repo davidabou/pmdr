@@ -72,7 +72,7 @@ useHead({
         </div>
       </header>
 
-      <main class="flex flex-col w-full h-[calc(100vh-5rem)]">
+      <main class="flex flex-col w-full h-[calc(100vh-116px)]">
         <div class="flex flex-col items-center space-y-16 my-auto pb-20">
           <div class="flex flex-col items-center space-y-4">
             <ClientOnly>
@@ -99,6 +99,25 @@ useHead({
           />
         </div>
       </main>
+
+      <footer class="flex justify-center p-2.5">
+        <p class="text-xs">
+          <span class="opacity-75">Crafted with 🍅 by </span>
+          <NuxtLink
+            to="https://github.com/davidabou"
+            class="underline opacity-75 transition-opacity hover:opacity-100"
+            @click="play('select')"
+            >@davidabou</NuxtLink
+          >
+          <span class="opacity-75"> · </span>
+          <NuxtLink
+            to="https://github.com/davidabou/pmdr"
+            class="underline opacity-75 transition-opacity hover:opacity-100"
+            @click="play('select')"
+            >source</NuxtLink
+          >
+        </p>
+      </footer>
     </div>
   </TooltipProvider>
 </template>
