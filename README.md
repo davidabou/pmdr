@@ -47,6 +47,6 @@ Invented by Francesco Cirillo in the late 1980s, the Pomodoro technique is a tim
 
 ## ⚖️ License
 
-Copyright © 2025 davidabou — All rights reserved.
+Copyright © 2026-present davidabou — All rights reserved.
 
 _Made with 🍅 by <a href="https://github.com/davidabou">@davidabou</a>_
