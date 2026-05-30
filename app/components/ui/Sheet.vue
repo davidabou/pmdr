@@ -24,7 +24,7 @@ watch(open, (newVal) => {
 <template>
   <DialogRoot v-model:open="open">
     <UiTooltip v-if="props.tooltip" :text="props.tooltip">
-      <DialogTrigger v-if="!!slots.default" as-child :class="props.class">
+      <DialogTrigger as-child :class="props.class">
         <slot :open="open" />
       </DialogTrigger>
     </UiTooltip>

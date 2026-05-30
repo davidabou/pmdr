@@ -2,19 +2,17 @@
 const props = defineProps<{
   text: string
 }>()
-
-const open = ref(false)
 </script>
 
 <template>
-  <TooltipRoot v-model:open="open">
+  <TooltipRoot>
     <TooltipTrigger as-child>
       <slot />
     </TooltipTrigger>
 
     <AnimatePresence>
-      <TooltipPortal v-if="open" force-mount>
-        <TooltipContent as-child force-mount :side-offset="4">
+      <TooltipPortal>
+        <TooltipContent as-child :side-offset="4">
           <Motion
             :initial="{ opacity: 0, scale: 0.75 }"
             :animate="{ opacity: 1, scale: 1 }"
