@@ -10,8 +10,8 @@ const props = defineProps<{
       <slot />
     </TooltipTrigger>
 
-    <AnimatePresence>
-      <TooltipPortal>
+    <TooltipPortal>
+      <AnimatePresence>
         <TooltipContent as-child :side-offset="4">
           <Motion
             :initial="{ opacity: 0, scale: 0.75 }"
@@ -33,7 +33,7 @@ const props = defineProps<{
             </TooltipArrow>
           </Motion>
         </TooltipContent>
-      </TooltipPortal>
-    </AnimatePresence>
+      </AnimatePresence>
+    </TooltipPortal>
   </TooltipRoot>
 </template>
