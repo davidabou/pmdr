@@ -102,17 +102,17 @@ useHead({
 
       <footer class="flex justify-center p-2.5">
         <p class="text-xs">
-          <span class="opacity-75">Crafted with 🍅 by </span>
+          <span class="opacity-50">Crafted with 🍅 by </span>
           <NuxtLink
             to="https://github.com/davidabou"
-            class="underline opacity-75 transition-opacity hover:opacity-100"
+            class="underline opacity-50 transition-opacity hover:opacity-90"
             @click="play('select')"
             >@davidabou</NuxtLink
           >
-          <span class="opacity-75"> · </span>
+          <span class="opacity-50"> · </span>
           <NuxtLink
             to="https://github.com/davidabou/pmdr"
-            class="underline opacity-75 transition-opacity hover:opacity-100"
+            class="underline opacity-50 transition-opacity hover:opacity-90"
             @click="play('select')"
             >source</NuxtLink
           >
