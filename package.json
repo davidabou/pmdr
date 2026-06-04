@@ -20,7 +20,7 @@
     "@vueuse/core": "^14.3.0",
     "@vueuse/nuxt": "^14.3.0",
     "motion-v": "^2.2.1",
-    "nuxt": "^4.4.5",
+    "nuxt": "^4.4.7",
     "reka-ui": "^2.9.7",
     "tailwind-merge": "^3.6.0",
     "tailwind-variants": "^3.2.2",
