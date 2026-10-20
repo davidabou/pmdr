@@ -24,11 +24,14 @@ const cycleProgress = computed(() =>
 const toggleTimer = () => (isRunning.value ? timer.pause() : timer.start())
 
 const siteUrl = 'https://pmdr.abou.dev'
-const ogImage = '/logo.svg'
-const description = 'A simple pomodoro app.'
+const siteName = 'Pmdr'
+const title = 'Pmdr - Simple & Free Pomodoro Timer'
+const ogImage = `${siteUrl}/og-image.png`
+const description =
+  'A minimalist, free online Pomodoro timer. Focus in 25-minute sessions with short and long breaks, sound alerts, notifications and dark mode. No account required.'
 
 const pageTitle = computed(() => {
-  if (!isRunning.value) return 'Pmdr'
+  if (!isRunning.value) return title
   const label = timer.phase.value === 'work' ? 'Time to focus!' : 'Break time'
   return `${formatTime(timer.timeLeft.value || 0)} - ${label}`
 })
@@ -37,19 +40,60 @@ useSeoMeta({
   title: pageTitle,
   description,
   author: 'davidabou',
-  robots: 'index, follow',
+  robots: 'index, follow, max-image-preview:large',
+  themeColor: [
+    { content: '#ffffff', media: '(prefers-color-scheme: light)' },
+    { content: '#0a0a0a', media: '(prefers-color-scheme: dark)' }
+  ],
+  applicationName: siteName,
   ogType: 'website',
   ogUrl: siteUrl,
-  ogSiteName: 'Pmdr',
-  ogTitle: pageTitle,
+  ogSiteName: siteName,
+  ogLocale: 'en_US',
+  ogTitle: title,
   ogDescription: description,
-  ogImage
+  ogImage,
+  ogImageType: 'image/png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: 'Pmdr - Simple Pomodoro Timer',
+  twitterCard: 'summary_large_image',
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImage,
+  twitterImageAlt: 'Pmdr - Simple Pomodoro Timer'
 })
 
 useHead({
+  htmlAttrs: { lang: 'en' },
   link: [
+    { rel: 'canonical', href: siteUrl },
     { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
-    { rel: 'apple-touch-icon', href: '/logo.svg' }
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+    { rel: 'manifest', href: '/site.webmanifest' }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: siteName,
+        url: siteUrl,
+        description,
+        image: ogImage,
+        applicationCategory: 'ProductivityApplication',
+        operatingSystem: 'Any',
+        browserRequirements: 'Requires JavaScript',
+        isAccessibleForFree: true,
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        author: {
+          '@type': 'Person',
+          name: 'davidabou',
+          url: 'https://github.com/davidabou'
+        }
+      })
+    }
   ]
 })
 </script>
@@ -58,7 +102,9 @@ useHead({
   <TooltipProvider :ignoreNonKeyboardFocus="true">
     <div>
       <header class="flex justify-between p-6">
-        <span class="font-bold text-2xl select-none">pmdr</span>
+        <h1 class="font-bold text-2xl select-none">
+          pmdr<span class="sr-only"> - Simple Pomodoro Timer</span>
+        </h1>
 
         <div class="flex items-center gap-2">
           <ThemeToggler />
